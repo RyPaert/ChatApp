@@ -57,7 +57,7 @@ namespace ChatApp.Net
                             break;
 
                         case 10:
-                            userDisconnectedEvent?.Invoke();
+                            userDisconnectEvent?.Invoke();
                             break;
 
                         default:
