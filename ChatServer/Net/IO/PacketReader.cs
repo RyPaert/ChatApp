@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ChatServer.Net.IO
 {
-    class PacketReaader : BinaryReader
+    class PacketReader : BinaryReader
     {
         private NetworkStream _ns;
-        public PacketReaader(NetworkStream ns) : base(ns)
+        public PacketReader(NetworkStream ns) : base(ns)
         {
             _ns = ns;
         }
