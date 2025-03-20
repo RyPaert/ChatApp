@@ -26,7 +26,7 @@ namespace ChatApp.Net
         {
             if (!_client.Connected)
             {
-                _client.Connect("127.0.0.1", 7891);
+                _client.Connect("0.tcp.eu.ngrok.io", 14400);
                 PacketReader = new PacketReader(_client.GetStream());
 
                 if (!string.IsNullOrEmpty(username))

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChatApp.Net.IO
 {
+
     class PacketBuilder
     {
         MemoryStream _ms;
