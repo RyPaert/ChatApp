@@ -60,9 +60,9 @@ namespace ConsoleApp
                             userDisconnectEvent?.Invoke();
                             break;
 
-                        default:
-                            Console.WriteLine("ah yes..");
-                            break;
+                        //default:
+                        //    Console.WriteLine("ah yes..");
+                        //    break;
                     }
                 }
             });

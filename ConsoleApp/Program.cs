@@ -12,9 +12,19 @@ namespace ConsoleApp
             Console.WriteLine("Enter your username");
             string username = Console.ReadLine();
             server1.ConnectToServer(username);
-            Console.WriteLine("Enter Message");
-            string msg = Console.ReadLine();
-            server1.SendMessageToServer(msg);
+            while (username != null)
+            {
+                Console.WriteLine("Enter Message");
+                string msg = Console.ReadLine();
+                if (username != null)
+                {
+                    server1.SendMessageToServer(msg);
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
     }
 }
