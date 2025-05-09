@@ -1,0 +1,28 @@
+services:
+  api:
+    build: /ChatServer
+    ports:
+      - "5000:5000"
+    networks:
+      - chatnet
+
+  chat-console:
+    build:
+        context: /ConsoleApp
+    depends_on:
+      - ChatServer
+    networks:
+      - chatnet
+
+  chat-client:
+   build:
+     context: ./ChatApp
+   depends_on:
+    - ChatServer
+   networks:
+    - chatnet
+
+
+networks:
+  chatnet:
+    driver: bridge
