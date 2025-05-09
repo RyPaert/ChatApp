@@ -1,27 +1,27 @@
 services:
-  api:
-    build: /ChatServer
+  chatserver:
+    build: 
+     context: ./ChatServer
     ports:
-      - "5000:5000"
+     - "5000:5000"
     networks:
-      - chatnet
+     - chatnet
 
-  chat-console:
+  chat-console1:
     build:
-        context: /ConsoleApp
+     context: ./ConsoleApp
     depends_on:
-      - ChatServer
+     - chatserver
     networks:
-      - chatnet
+     - chatnet
 
-  chat-client:
-   build:
-     context: ./ChatApp
-   depends_on:
-    - ChatServer
-   networks:
-    - chatnet
-
+  chat-console2:
+    build:
+     context: ./ConsoleApp
+    depends_on:
+     - chatserver
+    networks:
+     - chatnet
 
 networks:
   chatnet:
