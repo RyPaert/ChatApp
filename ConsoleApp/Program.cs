@@ -9,10 +9,15 @@ namespace ConsoleApp
         static void Main()
         {
             Server server1 = new Server();
+            server1.msgReceivedEvent += () =>
+                {
+                    string msg2 = server1.PacketReader.ReadMessage();
+                    Console.WriteLine(msg2);
+                };
             Console.WriteLine("Enter your username");
             string username = Console.ReadLine();
             server1.ConnectToServer(username);
-            while (username != null)
+            while (true)
             {
                 Console.WriteLine("Enter Message");
                 string msg = Console.ReadLine();
